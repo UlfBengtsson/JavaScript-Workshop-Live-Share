@@ -43,13 +43,13 @@ const Birthdate = document.getElementById('birthdate');
 
 //function inside a function? oh damn, i see ut now!
 function checkFirstname() {
-    if (Firstname == Lastname || Firstname.length < 2) {
+    if (Firstname == null || Firstname == Lastname || Firstname.length < 2) {
         return false;
     }
     else { return true; }
 }
 function checkLastname() {
-    if (Lastname == Firstname || Lastname.length < 2) {
+    if (Lastname == null || Lastname == Firstname || Lastname.length < 2) {
         return false;
     }
     else { return true; }
