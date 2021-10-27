@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- ------- Bootstrap CDN start ----------------------------------------------------------------- -->
+        <!-- Latest compiled and minified CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- ------- Bootstrap CDN ends ------------------------------------------------------------------ -->
+
+        <link rel="stylesheet" href="site.css" />
+
+        <title>Document</title>
+    </head>
+    <body class="container">
+        <div class="row mt-2">
+            <h2>JavaScript Validation Workshop</h2>
+        </div>
+        <div class="row">
+            <form
+                name="myForm"
+                class="col-8 mt-4 p-2 rounded mx-auto border border-dark"
+                onsubmit="return validateForm(event)"
+                method="post"
+            >
+                <div class="row mt-1">
+                    <div class="col-md-3 mt-auto">
+                        <label for="firstName">Firstname</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="firstName"
+                            id="firstName"
+                        />
+                        <span
+                            id="firstName-feedback"
+                            class="validation-feedback"
+                        ></span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-3 mt-auto">
+                        <label for="lastName">Lastname</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="lastName"
+                            id="lastName"
+                        />
+                        <span
+                            id="lastName-feedback"
+                            class="validation-feedback"
+                        ></span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-3 mt-auto">
+                        <label for="birthDate">Birth date</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input
+                            type="date"
+                            class="form-control"
+                            name="birthDate"
+                            id="birthDate"
+                        />
+                        <span
+                            id="birthDate-feedback"
+                            class="validation-feedback"
+                        ></span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-3 mt-auto">
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="col-md-9">
+                        <select
+                            name="country"
+                            id="country"
+                            class="form-control"
+                        >
+                            <option selected disabled>Select a country</option>
+                        </select>
+                        <span
+                            id="country-feedback"
+                            class="validation-feedback"
+                        ></span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-3 mt-auto">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="col-md-9">
+                        <select
+                            name="city"
+                            id="city"
+                            class="form-control"
+                            required
+                        >
+                            <option selected disabled>
+                                Select a country before city
+                            </option>
+                        </select>
+                        <span
+                            id="city-feedback"
+                            class="validation-feedback"
+                        ></span>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-4">
+                        <input
+                            type="submit"
+                            class="btn btn-success"
+                            value="Submit"
+                        />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-2">
+            <h4>Requierments for the <i>Form</i> inputs</h4>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Input name</th>
+                        <th>Requierments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Firstname</td>
+                        <td>
+                            Minimum or 2 letters and may not be the same as
+                            Lastname.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lastname</td>
+                        <td>
+                            Minimum or 2 letters and may not be the same as
+                            Firstname.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Birth date</td>
+                        <td>
+                            May only be a date of the past. (Optionial:
+                            Congratulate if it´s thier birthday)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>
+                            Use the list of Countries inside the JavaScript file
+                            to create the option tag elements with JavaScript.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            Use a Event Listener on the Country select element
+                            to determin the right cities option´s
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="formValidation.js"></script>
+    </body>
+</html>
