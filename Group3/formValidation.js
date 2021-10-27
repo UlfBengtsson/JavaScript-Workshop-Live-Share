@@ -29,7 +29,12 @@ const citiesData = [
 function validateForm(event) {
     event.preventDefault();
     //call function´s that validates each input sepratly
+    console.log("firstname is valid?", validateFristName());
+}
 
+function validateFristName() {
+    //logic here
+    return false;
 }
 
 // ----- Utility functions ---------------------------------------------------------------------------//

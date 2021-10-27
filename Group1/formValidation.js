@@ -1,4 +1,12 @@
 "use strict";
+let firstName = "not true";
+//const
+
+//let inputValue = inputValue.value.trim();
+
+
+let regexFirstName = new RegExp(/^[a-zøæ]{2}\d{1}/, "i");
+
 // ----- Global veribles ----------------------------------------------------------------------------//
 const countriesData = [
     { code: "swe", name: "Sweden" },
@@ -28,9 +36,47 @@ const citiesData = [
 // ----- Validations ---------------------------------------------------------------------------------//
 function validateForm(event) {
     event.preventDefault();
+    console.log("firsname true", validateFirstName());
+    console.log("lastName true", validateLastname());
+    console.log("Birth date true", validateBirthDate());
+
+
     //call function´s that validates each input sepratly
 
 }
+function validateFirstName() {
+    let firstName = document.getElementById("firstName").value;
+    if (firstName == "" || firstName.length < 2) {
+        return false;
+
+    }
+    return true;
+}
+
+
+function validateLastname() {
+    let lastName = document.getElementById("lastName").value;
+    if (lastName == "" || lastName.length <= 2) {
+        return false;
+
+    }
+
+}
+
+function validateBirthDate() {
+    let birthDate = document.getElementById("birthDate").value;
+    console.log("birthDate raw", birthDate);
+    console.log("birthDate type", typeof birthDate);
+    if (birthDate == null || birthDate == "") {
+        return false;
+    }
+
+    birthDate = new Date(birthDate);
+    console.log("birthDate Date obj", birthDate);
+    console.log("birthDate type", typeof birthDate);
+}
+
+
 
 // ----- Utility functions ---------------------------------------------------------------------------//
 

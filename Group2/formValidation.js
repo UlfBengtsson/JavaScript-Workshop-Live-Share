@@ -28,10 +28,45 @@ const citiesData = [
 // ----- Validations ---------------------------------------------------------------------------------//
 function validateForm(event) {
     event.preventDefault();
-    //call function´s that validates each input sepratly
-
+    console.log("firstname valid?:", validateFirstname());
+    console.log("lastname valid?:", validateLastname());
+    console.log("country valid?:", validateCountry());
 }
 
+function validateFirstname() {
+    let userFirstName = document.getElementById("firstName").value;
+    if (userFirstName == "" || userFirstName.lenght < 2 || userLastName == userFirstName) {
+        return false;
+    }
+    return true;
+}
+function validateLastname() {
+    let userLastName = document.getElementById("lastName").value;
+    if (userLastName == "" || userLastName.lenght < 2 || userLastName == userFirstName) {
+        return false;
+    }
+    return true;
+}
+function validateCountry() {
+    let country = document.getElementById("country").value;
+    console.log("country value:", country);
+    if (country == "Select a country") {
+        return false;
+    }
+    return true;
+}
 // ----- Utility functions ---------------------------------------------------------------------------//
+function countryGlider() {
+    var countryForm = document.getElementById("country")
+    for (var i = 0; i < countriesData.length; i++) {
+        var option = countriesData[i];
+        var el = document.createElement("option");
+        el.text = option.name;
+        el.value = option.code;
+
+        countryForm.appendChild(el);
+    }
+}
 
 // ----- Functions to run at load of page -------------------------------------------------------------//
+countryGlider();

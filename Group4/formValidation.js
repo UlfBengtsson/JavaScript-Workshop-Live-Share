@@ -25,10 +25,86 @@ const citiesData = [
 
 // ----- Event Listener ------------------------------------------------------------------------------//
 
+
+
+
 // ----- Validations ---------------------------------------------------------------------------------//
 function validateForm(event) {
     event.preventDefault();
     //call function´s that validates each input sepratly
+
+}
+
+function validateFirstname() {
+    var Firstname = document.getElementById('firstName').value//'firstName'
+
+    if (Firstname == '' || Firstname == null || Firstname.length < 2) {
+        console.log('Please enter your firstname ');
+        return false;
+
+    }
+}
+
+function validateLastname() {
+
+    var Lastname = document.getElementById('lastName')
+
+    if (Lastname == '' || Lastname == null || Lastname.length < 2) {
+        console.log('Please enter your lastname');
+        return false;
+
+    }
+}
+
+function validateBirthDate() {
+
+    var birthdate = document.getElementById('birthDate')
+    console.log("birthdate", birthdate);
+
+    if (birthdate == null || birthdate == '') {
+        console.log('Please enter your birthdae');
+        return false;
+
+    }
+    birthdate = new Date(birthdate);
+    console.log("birthdate date", birthdate);
+
+}
+
+let country = document.querySelector("#country")
+country.addEventListener("click", clickonCountry);
+
+function clickonCountry() {
+    console.log("Please choose a country");
+    country.innerHTML = "You click on country please choose";
+    switch (citiesData) {
+
+        case 0: document.querySelector(console.log("Sweden"));
+        case 1: console.log("Denmark");
+        case 2: console.log("Norway");
+        case 3: console.log("Finland");
+
+    }
+
+
+}
+
+
+let country = document.querySelector("#city");
+
+function clickonCity() {
+    console.log("Please choose a city");
+    country.innerHTML = "You click on city please choose";
+    switch (citiesData) {
+        case 0: console.log("Sweden");
+        case 1: console.log("Denmark");
+        case 2: console.log("Norway");
+        case 3: console.log("Finland");
+
+    }
+
+    country.addEventListener("click", clickonCountry);
+
 
 }
 
