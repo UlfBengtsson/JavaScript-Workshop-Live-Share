@@ -1,5 +1,5 @@
 "use strict";
-//Teachers File!
+
 // ----- Global veribles ----------------------------------------------------------------------------//
 const countriesData = [
     { code: "swe", name: "Sweden" },
@@ -7,7 +7,7 @@ const countriesData = [
     { code: "no", name: "Norway" },
     { code: "fi", name: "Finland" }
 ];
-//let's have fun removing semicolons - Teacher says No
+
 const citiesData = [
     { id: 1, code: "swe", name: "Stockholm" },
     { id: 2, code: "swe", name: "Malmö" },

@@ -1,9 +1,5 @@
 "use strict";
 let firstName = "not true";
-//const
-
-//let inputValue = inputValue.value.trim();
-
 
 let regexFirstName = new RegExp(/^[a-zøæ]{2}\d{1}/, "i");
 

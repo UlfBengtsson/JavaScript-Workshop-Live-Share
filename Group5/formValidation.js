@@ -41,7 +41,6 @@ const Birthdate = document.getElementById('birthdate');
 
 //firstname
 
-//function inside a function? oh damn, i see ut now!
 function checkFirstname() {
     if (Firstname == null || Firstname == Lastname || Firstname.length < 2) {
         return false;
